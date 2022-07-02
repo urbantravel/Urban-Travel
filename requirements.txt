@@ -5,3 +5,5 @@ flask_migrate
 flask_moment
 flask_login
 werkzeug
+psycopg2
+mysqlclient

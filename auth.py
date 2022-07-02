@@ -8,7 +8,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('./src/login.html')
 
 @auth.route('/login', methods=['POST'])
 def login_post():
@@ -26,11 +26,11 @@ def login_post():
 
     # if the above check passes, then we know the user has the right credentials
     login_user(user, remember=remember)
-    return redirect(url_for('app.profile'))
+    return redirect(url_for('main.profile'))
 
 @auth.route('/signup')
 def signup():
-    return render_template('signup.html')
+    return render_template('./src/signup.html')
 
 @auth.route('/signup', methods=['POST'])
 def signup_post():
@@ -58,4 +58,4 @@ def signup_post():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('app.index'))
+    return redirect(url_for('main.index'))
